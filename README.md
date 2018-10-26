@@ -59,6 +59,7 @@ Install `zsh` and [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 ```
 # pacman -S zsh
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 Install [antigen](https://getantibody.github.io/install/)
@@ -110,6 +111,12 @@ $ ln -s ~/Projects/dotfiles/termite ~/.config/
 
 ### VIM
 
+Install a clipboard capable vim version. In archlinux you need to install `gvim` instead of `vim` (`gvim` ships the `vim` cli package)
+
+```
+# pacman -S gvim
+```
+
 Install [vundle](https://github.com/VundleVim/Vundle.vim) and link the config
 
 ```
@@ -123,8 +130,19 @@ After installing the plugins you can re run `vim` and you'll be fine.
 
 My vim config bring these shortcuts and features:
 
-* NerdTree (toggle with <C-f>)
-* TODO: complete
+* Default `<leader>` is mapped to `,`
+* NerdTree (toggle with `<C-f>`)
+* Highlight search (toggle with `F3`)
+* Show differences between last saved version of the file and the current file (toggle with `F4`)
+* Fix file indentation with `F7`
+* Close all buffers but the current one with `F10`
+* `<C-m>` will put the current buffer at fullscreen
+* `<C-n>` will restore buffers after one being at fullscreen
+* You can navigate faster by holding `<C>` with the default movement with `h` `j` `k` `l`
+* `d` `D` `x` `X` will delete the selected text. For copy you need to press for example `<leader>d`
+* You can edit the `~/.vimrc` file at anytime inside vim by pressing `<leader>ev`
+* To source the `~/.vimrc` at anytime inside vim use `<leader>sv`
+* Other features that you can view/modify through the `~/.vimrc` file
 
 ### i3lock
 
@@ -148,3 +166,6 @@ $ ln -s ~/Projects/dotfiles/awesome ~/.config
 
 Then reload awesomewm with Ctrl + Win + R
 
+The bar is hidden by default but you can toggle it with `<Win-b>`.
+
+The menu is only accessible with `<Win-w>`
