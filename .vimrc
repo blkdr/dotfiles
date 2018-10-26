@@ -55,12 +55,8 @@ Plugin 'schickling/vim-bufonly'
 Plugin 'tommcdo/vim-lion'
 
 " Colorschemes
-Plugin 'szorfein/darkest-space'
-Plugin 'nanotech/jellybeans.vim'
 Plugin 'crusoexia/vim-monokai'
-Plugin 'dracula/vim'
 Plugin 'srcery-colors/srcery-vim'
-Plugin 'AlessandroYorba/Sierra'
 
 " :source%
 " :PluginInstall
@@ -78,7 +74,6 @@ let mapleader = ","
 let g:mapleader = ","
 
 highlight ColorColumn ctermbg=DarkGray
-"set colorcolumn=80
 
 map <F3> :set hlsearch! hlsearch?<CR>
 map <F7> mzgg=G`z`
@@ -110,11 +105,6 @@ filetype plugin on
 " Colorscheme
 set t_Co=256
 syntax on
-"let g:sierra_Sunset = 1
-"let g:sierra_Twilight = 1
-"let g:sierra_Midnight = 1
-"let g:sierra_Pitch = 1
-"colorscheme sierra
 colorscheme monokai
 
 let g:jsdoc_enable_es6 = 1
