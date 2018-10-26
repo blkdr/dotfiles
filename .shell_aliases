@@ -1,0 +1,41 @@
+#!/bin/bash
+
+alias ll="ls -alF"
+alias la="ls -A"
+alias l="ls -CF"
+alias lsdir="ls -lha | grep '^d'"
+alias lsfiles="ls -lha | egrep -v '^d'"
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Fast ~/.zshrc config reload
+alias resource="source ~/.zshrc"
+
+# Edit awesomewm config
+alias awesomeEdit="vim ~/.config/awesome/rc.lua"
+
+# Keyboard layouts
+alias kus="setxkbmap -layout us -variant altgr-intl -option nodeadkeys"
+# Add '-option caps:swapescape' to swap Esc <=> Caps
+
+# Screenlock
+alias i3no="sh ~/.i3lock/lock"
+alias rnitrogen="nitrogen --restore 2> /dev/null"
+
+# Docker proccess
+alias dps="docker ps -q | xargs docker inspect --format '{{ .Id }} - {{ .Name }} - {{ .NetworkSettings.IPAddress }}'"
+
+# SSH
+alias sshStart='sudo systemctl start ssh'
+alias sshStop='sudo systemctl stop ssh'
+
+# git
+alias gcb='git_current_branch'
+
+# Example: $ git push origin $(gcb)
+alias gpush='git push origin $(gcb)'
+alias gpull='git pull origin $(gcb)'
+
+alias envi="source ~/Documents/docker-compose/bin/activate"
