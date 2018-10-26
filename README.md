@@ -4,8 +4,9 @@
 * vim (+ vundle)
 * awesomewm +4
 
-Note that this files are my personal configuration for my work environment so somethings should be modified to satisfy your needs.
-Which thins? I'll try to explain some of them and add some screenshots (which ill be adding soon).
+Note that this files are my personal configuration for my work environment so some things should be modified to satisfy your needs.
+
+Which things? I'll try to explain some of them and add some screenshots (which ill be adding soon).
 
 ## Clone repository
 
@@ -25,6 +26,7 @@ And also apply those changes to the command lines used below.
 ## How to install
 
 My `awesomewm` and `termite` config uses the `lemon` font from the `artwiz` fonts.
+
 If you want to use another font you need to update the font variable on these files: `termite/config and `awesome/themes/powerarrow-dark/theme.lua`
 
 ### Install the artwiz fonts
@@ -116,6 +118,7 @@ $ ln -s ~/.vimrc ~/Projects/dotfiles/.vimrc
 ```
 
 Open `vim` and run `:so%` (to source the .vimrc file) and then `:PluginInstall`
+
 After installing the plugins you can re run `vim` and you'll be fine.
 
 My vim config bring these shortcuts and features:
