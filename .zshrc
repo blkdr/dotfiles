@@ -1,3 +1,5 @@
+#export TERM="xterm-256color"
+export LANG=en_US.UTF-8
 zstyle ':completion:*' menu select
 
 export ZSH=~/.oh-my-zsh
