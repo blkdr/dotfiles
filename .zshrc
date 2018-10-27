@@ -11,8 +11,16 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='vim'
 
-if [ -f ~/.load_shell_helpers ]; then
-  . ~/.load_shell_helpers
+if [ -f ~/.shell_aliases ]; then
+  . ~/.shell_aliases
+fi
+
+if [ -f ~/.shell_helpers ]; then
+  . ~/.shell_helpers
+fi
+
+if [ -f ~/.shell_colors ]; then
+  . ~/.shell_colors
 fi
 
 # Show alias full command when running alias
