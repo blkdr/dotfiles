@@ -11,7 +11,7 @@ alias lsfiles="ls -lha | egrep -v '^d'"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Fast ~/.zshrc config reload
-alias resource="source ~/.zshrc"
+alias rezash="source ~/.zshrc"
 
 # Edit awesomewm config
 alias awesomeEdit="vim ~/.config/awesome/rc.lua"
