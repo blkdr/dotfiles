@@ -121,7 +121,7 @@ Install [vundle](https://github.com/VundleVim/Vundle.vim) and link the config
 
 ```
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-$ ln -s ~/.vimrc ~/Projects/dotfiles/.vimrc
+$ ln -s ~/Projects/dotfiles/.vimrc ~/
 ```
 
 Open `vim` and run `:so%` (to source the .vimrc file) and then `:PluginInstall`
