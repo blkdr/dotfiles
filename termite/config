@@ -7,7 +7,7 @@
 #font = Terminus 9
 #font = artwiz lime 9
 #font = curie 9
-font = lemon 8
+font = artwiz lemon 8
 clickable_url = true
 scrollback_lines = -1
 

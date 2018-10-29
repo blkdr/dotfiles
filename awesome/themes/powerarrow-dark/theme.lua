@@ -15,8 +15,8 @@ local os    = { getenv = os.getenv }
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-dark"
 theme.wallpaper                                 = theme.dir .. "/wall.png"
-theme.font 					                            = "lemon 8"
-theme.taglist_font 				                      = "lemon 8"
+theme.font                                      = "artwiz lemon 8"
+theme.taglist_font                              = "artwiz lemon 8"
 theme.fg_normal                                 = "#aaaaaa"
 theme.fg_focus                                  = "#EA6F81"
 theme.fg_urgent                                 = "#CC9393"
