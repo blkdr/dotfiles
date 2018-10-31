@@ -57,6 +57,7 @@ Plugin 'tommcdo/vim-lion'
 " Colorschemes
 Plugin 'crusoexia/vim-monokai'
 Plugin 'srcery-colors/srcery-vim'
+Plugin 'skielbasa/vim-material-monokai'
 
 " :source%
 " :PluginInstall
@@ -87,8 +88,6 @@ noremap <C-w>n <C-w>=
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:NERDTreeWinSize = 60
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 
@@ -105,7 +104,7 @@ filetype plugin on
 " Colorscheme
 set t_Co=256
 syntax on
-colorscheme monokai
+colorscheme material-monokai
 
 let g:jsdoc_enable_es6 = 1
 let g:jsx_ext_required = 0
