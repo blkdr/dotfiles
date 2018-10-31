@@ -104,11 +104,14 @@ filetype plugin on
 " Colorscheme
 set t_Co=256
 syntax on
+set background=dark
+let g:materialmonokai_subtle_spell=1
+let g:airline_theme='materialmonokai'
+let g:materialmonokai_subtle_airline=1
 colorscheme material-monokai
 
 let g:jsdoc_enable_es6 = 1
 let g:jsx_ext_required = 0
-let g:airline_theme='papercolor'
 set tabline=%!tabber#TabLine()
 imap cll console.log();<Esc>hi
 vmap '' c''<Esc>P
