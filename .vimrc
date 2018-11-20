@@ -3,7 +3,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Vungle
+" Vundle
 Plugin 'VundleVim/Vundle.vim'
 
 " JS & HTML & CSS
@@ -55,9 +55,8 @@ Plugin 'schickling/vim-bufonly'
 Plugin 'tommcdo/vim-lion'
 
 " Colorschemes
-Plugin 'crusoexia/vim-monokai'
-Plugin 'srcery-colors/srcery-vim'
 Plugin 'skielbasa/vim-material-monokai'
+Plugin 'chriskempson/base16-vim'
 
 " :source%
 " :PluginInstall
@@ -148,3 +147,6 @@ nmap <c-l> 4l
 " Quickly open/reload vim
 nnoremap <leader>ev :split $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+
+" Prettier
+nnoremap gp :silent %!prettier --stdin --stdin-filepath % --trailing-comma all --single-quote --parser html<CR>

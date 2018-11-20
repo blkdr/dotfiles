@@ -1,16 +1,7 @@
 [options]
-#font = ProFont for Powerline 9
-#font = Fira Mono for Powerline Medium 8
-#font = Ubuntu Mono derivative Powerline Regular 10
-#font = Ohsnap 10
-#font = Misc Ohsnap 9
-#font = Terminus 9
-#font = artwiz lime 9
-#font = curie 9
-font = lemon 8
+font = artwiz lemon 8
 clickable_url = true
 scrollback_lines = -1
-
 [colors]
 background = #1a1a1a
 cursor = #f6f7ec
