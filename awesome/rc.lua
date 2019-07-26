@@ -64,13 +64,12 @@ local chosen_theme = "powerarrow-dark"
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "termite"
--- termite -e /bin/zsh
-local editor       = os.getenv("EDITOR") or "nano"
-local gui_editor   = "leafpad"
-local browser      = "chromium-browser"
+local editor       = os.getenv("EDITOR") or "vim"
+local gui_editor   = "gvim"
+local browser      = "google-chrome-stable"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "CODE", "WEB", "MAIL", "SLACK", "MUSIC" }
+awful.util.tagnames = { " :: 1 GENERAL PURPOSES", ":: 2 CONSOLE", ":: 3 TEXT EDITOR", ":: 4 WEB BROWSER", ":: 5 DEBUG ::" }
 awful.layout.layouts = {
     --awful.layout.suit.floating,
     awful.layout.suit.tile,
@@ -569,7 +568,10 @@ awful.rules.rules = {
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen,
-                     size_hints_honor = false
+                     size_hints_honor = false,
+                     maximized_horizontal = false,
+                     maximized_vertical = false,
+                     maximized = false,
      }
     },
 
