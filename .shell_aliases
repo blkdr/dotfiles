@@ -1,5 +1,6 @@
 #!/bin/bash
 
+alias :q="exit"
 alias ll="ls -alF"
 alias la="ls -A"
 alias l="ls -CF"
@@ -39,3 +40,5 @@ alias gpush='git push origin $(gcb)'
 alias gpull='git pull origin $(gcb)'
 
 alias envi="source ~/Documents/docker-compose/bin/activate"
+
+alias rxrandr="xrandr --output DP-1.2.1 --left-of DP-1.1 && rnitrogen"
