@@ -51,10 +51,20 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'itchyny/lightline.vim'
 
 " Colorschemes
-Plugin 'blkdr/vim-material-monokai'
+Plugin 'Remich/vim-material-monokai'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'sainnhe/vim-color-desert-night'
 Plugin 'AlessandroYorba/Breve'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'romainl/flattened' " based on solarized
+Plugin 'kaicataldo/material.vim'
+Plugin 'romainl/Apprentice'
+Plugin 'rakr/vim-one'
+Plugin 'flrnd/candid.vim'
+Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'ajmwagar/vim-deus'
+
+Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()
 
@@ -64,6 +74,8 @@ set expandtab
 set shiftwidth=2
 set number
 set ignorecase
+set showmatch
+set encoding=UTF-8
 
 " Its a nice practice to have the <leader> key set to comma (instead of \ as default on linux)
 let mapleader = ","
@@ -106,20 +118,31 @@ map <F6> :Limelight!!<CR>
 " Colorscheme
 set t_Co=256
 syntax on
-set background=dark
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
 
-let vim_colorscheme='desert-night'
+"let vim_colorscheme='desert-night'
+"let vim_colorscheme='ayu'
+"let vim_colorscheme='material-monokai'
+"let vim_colorscheme='breve'
+"let vim_colorscheme='papercolor'
+"let vim_colorscheme='material'
+"let vim_colorscheme='apprentice'
+"let vim_colorscheme='flat'
+"let vim_colorscheme='one'
+"let vim_colorscheme='dracula'
+let vim_colorscheme='deus'
 
 if vim_colorscheme == 'desert-night'
-  colorscheme desert-night
+  set background=dark
   let g:lightline = {'colorscheme' : 'desert_night'}
+  colorscheme desert-night
 endif
 if vim_colorscheme == 'ayu'
+  set background=dark
   "let ayucolor="light"
   let ayucolor="mirage"
   "let ayucolor="dark"
@@ -130,15 +153,55 @@ if vim_colorscheme == 'material-monokai'
   "let g:materialmonokai_subtle_spell=1
   let g:airline_theme='materialmonokai'
 
+  set background=dark
+  let g:lightline = {'colorscheme' : 'monokai'}
   colorscheme material-monokai
 endif
 if vim_colorscheme == 'breve'
+  set background=light
+  let g:lightline = {'colorscheme' : 'PaperColor', 'background' : 'light'}
   colorscheme breve
 endif
+if vim_colorscheme == 'papercolor'
+  set background=light
+  let g:lightline = {'colorscheme' : 'PaperColor', 'background' : 'light'}
+  colorscheme PaperColor
+endif
+if vim_colorscheme == 'material'
+  set background=dark
+  "let g:material_terminal_italics = 1
+  let g:material_theme_style = 'palenight' " default, palenight, ocean, lighter, darker
+  let g:lightline = {'colorscheme' : 'material_vim'}
+  colorscheme material
+endif
+if vim_colorscheme == 'apprentice'
+  set background=dark
+  colorscheme apprentice
+endif
+if vim_colorscheme == 'flat'
+  colorscheme flattened_dark
+endif
+if vim_colorscheme == 'one'
+  set background=dark
+  let g:lightline = {'colorscheme' : 'one'}
+  colorscheme one
+endif
+if vim_colorscheme == 'dracula'
+  set background=dark
+  let g:lightline = {'colorscheme' : 'dracula'}
+  colorscheme dracula
+endif
+if vim_colorscheme == 'deus'
+  set background=dark
+  let g:lightline = {'colorscheme' : 'deus'}
+  colorscheme deus
+endif
 if vim_colorscheme == 'desert'
+  set background=light
   colorscheme desert
 endif
 if vim_colorscheme == 'darkblue'
+  set background=light
   colorscheme darkblue
 endif
 
@@ -192,10 +255,13 @@ vnoremap > >gv
 
 " Prettier
 nnoremap gp :silent %!prettier --stdin --stdin-filepath % --trailing-comma all --single-quote --parser html<CR>
+com! FormatJSON %!python -m json.tool
+
 map ; :set cursorline<CR>:set cursorcolumn<CR>:set nocursorline<CR>:set nocursorcolumn<CR>
 
 " Highlight word under cursor
 hi link illuminatedWord Visual
+let g:Illuminate_highlightUnderCursor = 0
 
 " Ctrl - p activate Normal mode instead of autocomplete
 imap <C-p> <Esc>

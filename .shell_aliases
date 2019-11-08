@@ -41,4 +41,7 @@ alias gpull='git pull origin $(gcb)'
 
 alias envi="source ~/Documents/docker-compose/bin/activate"
 
-alias rxrandr="xrandr --output DP-1.2.1 --left-of DP-1.1 && rnitrogen"
+alias rxrandr="xrandr --output DP-1.2.1 --left-of DP-1.1"
+
+alias tl="teamocil --here"
+alias tln="teamocil"

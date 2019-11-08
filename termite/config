@@ -1,43 +1,50 @@
 [options]
-font = artwiz lemon 8
+#font = lemon Medium 8
+font = UbuntuMono Nerd Font 11
+#font = Ubuntu Mono 14
+#font = Clematis 14
+#font = DejaVuSansMono YaHei NF 14
+#font = FiraCode QiHei NF 14
+#font = Hack Regular 8
 clickable_url = true
 scrollback_lines = -1
+
 [colors]
 
 # special
-foreground      = #d4b07b
-foreground_bold = #d4b07b
-cursor          = #d4b07b
-background      = #24221c
+foreground      = #bcbcbc
+foreground_bold = #bcbcbc
+cursor          = #bcbcbc
+background      = #262626
 
 # black
-color0  = #87765d
-color8  = #87765d
+color0  = #1c1c1c
+color8  = #444444
 
 # red
-color1  = #e56b55
-color9  = #e56b55
+color1  = #af5f5f
+color9  = #ff8700
 
 # green
-color2  = #99b05f
-color10 = #99b05f
+color2  = #5f875f
+color10 = #87af87
 
 # yellow
-color3  = #e18245
-color11 = #e5a440
+color3  = #87875f
+color11 = #ffffaf
 
 # blue
-color4  = #949fb4
-color12 = #949fb4
+color4  = #5f87af
+color12 = #8fafd7
 
 # magenta
-color5  = #d261a5
-color13 = #d261a5
+color5  = #5f5f87
+color13 = #8787af
 
 # cyan
-color6  = #99b05f
-color14 = #99b05f
+color6  = #5f8787
+color14 = #5fafaf
 
 # white
-color7  = #d4b07b
-color15 = #d4b07b
+color7  = #6c6c6c
+color15 = #ffffff

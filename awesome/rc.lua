@@ -162,6 +162,7 @@ beautiful.init(theme_path)
 
 -- {{{ Menu
 local myawesomemenu = {
+    { "killapp", xkill },
     { "hotkeys", function() return false, hotkeys_popup.show_help end },
     { "manual", terminal .. " -e man awesome" },
     { "lock",  function () awful.util.spawn_with_shell("sh ~/Projects/dotfiles/i3lock/lock") end },
@@ -202,7 +203,7 @@ awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
     -- disable right click menu
-    --awful.button({ }, 3, function () awful.util.mymainmenu:toggle() end),
+    awful.button({ }, 3, function () awful.util.mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
@@ -678,7 +679,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Keyboard map indicator and changer
 kbdcfg = {}
 kbdcfg.cmd = "setxkbmap"
-kbdcfg.layout = { { "us", "" , "English" }, { "latam", "" , "Spanish" } }
+kbdcfg.layout = { { "us", "" , "English" } }
 kbdcfg.current = 1  -- us is our default layout
 kbdcfg.widget = wibox.widget.textbox()
 kbdcfg.widget:set_text(" " .. kbdcfg.layout[kbdcfg.current][3] .. " ")
