@@ -28,20 +28,14 @@ alias rnitrogen="nitrogen --restore 2> /dev/null"
 # Docker proccess
 alias dps="docker ps -q | xargs docker inspect --format '{{ .Id }} - {{ .Name }} - {{ .NetworkSettings.IPAddress }}'"
 
-# SSH
-alias sshStart='sudo systemctl start ssh'
-alias sshStop='sudo systemctl stop ssh'
-
 # git
 alias gcb='git_current_branch'
 
 # Example: $ git push origin $(gcb)
 alias gpush='git push origin $(gcb)'
 alias gpull='git pull origin $(gcb)'
+alias gfetch='git fetch --all'
 
 alias envi="source ~/Documents/docker-compose/bin/activate"
 
 alias rxrandr="xrandr --output DP-1.2.1 --left-of DP-1.1"
-
-alias tl="teamocil --here"
-alias tln="teamocil"
