@@ -41,28 +41,26 @@ Plugin 'junegunn/limelight.vim'
 Plugin 'pseewald/vim-anyfold'
 " Automatically highlight current word under the cursor
 Plugin 'RRethy/vim-illuminate'
+Plugin 'ap/vim-css-color'
 
 "Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'scrooloose/syntastic'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
-Plugin 'itchyny/lightline.vim'
+"Plugin 'itchyny/lightline.vim'
 
 " Colorschemes
 Plugin 'Remich/vim-material-monokai'
 Plugin 'ayu-theme/ayu-vim'
-Plugin 'sainnhe/vim-color-desert-night'
-Plugin 'AlessandroYorba/Breve'
-Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'romainl/flattened' " based on solarized
 Plugin 'kaicataldo/material.vim'
-Plugin 'romainl/Apprentice'
 Plugin 'rakr/vim-one'
-Plugin 'flrnd/candid.vim'
-Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'ajmwagar/vim-deus'
+Plugin 'megantiu/true.vim'
+Plugin 'yasukotelin/shirotelin'
+Plugin 'chriskempson/base16-vim'
 
 Plugin 'ryanoasis/vim-devicons'
 
@@ -124,23 +122,17 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-"let vim_colorscheme='desert-night'
 "let vim_colorscheme='ayu'
 "let vim_colorscheme='material-monokai'
-"let vim_colorscheme='breve'
-"let vim_colorscheme='papercolor'
 "let vim_colorscheme='material'
 "let vim_colorscheme='apprentice'
 "let vim_colorscheme='flat'
 "let vim_colorscheme='one'
-"let vim_colorscheme='dracula'
-let vim_colorscheme='deus'
+"let vim_colorscheme='deus'
+"let vim_colorscheme='true.vim'
+"let vim_colorscheme='shirotelin'
+let vim_colorscheme='base16'
 
-if vim_colorscheme == 'desert-night'
-  set background=dark
-  let g:lightline = {'colorscheme' : 'desert_night'}
-  colorscheme desert-night
-endif
 if vim_colorscheme == 'ayu'
   set background=dark
   "let ayucolor="light"
@@ -156,16 +148,6 @@ if vim_colorscheme == 'material-monokai'
   set background=dark
   let g:lightline = {'colorscheme' : 'monokai'}
   colorscheme material-monokai
-endif
-if vim_colorscheme == 'breve'
-  set background=light
-  let g:lightline = {'colorscheme' : 'PaperColor', 'background' : 'light'}
-  colorscheme breve
-endif
-if vim_colorscheme == 'papercolor'
-  set background=light
-  let g:lightline = {'colorscheme' : 'PaperColor', 'background' : 'light'}
-  colorscheme PaperColor
 endif
 if vim_colorscheme == 'material'
   set background=dark
@@ -186,15 +168,26 @@ if vim_colorscheme == 'one'
   let g:lightline = {'colorscheme' : 'one'}
   colorscheme one
 endif
-if vim_colorscheme == 'dracula'
-  set background=dark
-  let g:lightline = {'colorscheme' : 'dracula'}
-  colorscheme dracula
-endif
 if vim_colorscheme == 'deus'
   set background=dark
   let g:lightline = {'colorscheme' : 'deus'}
   colorscheme deus
+endif
+if vim_colorscheme == 'true.vim'
+  set background=dark
+  let g:true_airline = 1
+  let g:airline_theme='true'
+  colorscheme true
+endif
+if vim_colorscheme == 'shirotelin'
+  set background=light
+  let g:airline_theme='one'
+  colorscheme shirotelin
+endif
+if vim_colorscheme == 'base16'
+  set background=dark
+  "colorscheme base16-darktooth
+  colorscheme base16-gruvbox-dark-soft
 endif
 if vim_colorscheme == 'desert'
   set background=light
@@ -253,6 +246,11 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+" Tab to indent in visual mode.
+vnoremap <Tab> >gv
+" Shift+Tab to unindent in visual mode.
+vnoremap <S-Tab> <gv
+
 " Prettier
 nnoremap gp :silent %!prettier --stdin --stdin-filepath % --trailing-comma all --single-quote --parser html<CR>
 com! FormatJSON %!python -m json.tool
@@ -270,6 +268,9 @@ imap kj <Esc>
 imap jk <Esc>
 imap KJ <Esc>
 imap JK <Esc>
+
+"set list
+"set listchars=tab:»-,eol:↲,extends:»,precedes:«,space:.
 
 " Fold
 autocmd Filetype * AnyFoldActivate
