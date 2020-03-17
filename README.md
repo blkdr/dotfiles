@@ -1,12 +1,14 @@
 # These are my personal dotfiles
 
 * zsh (+ oh-my-zsh)
+* tmux + tpm
+* gnome-terminal -or- termite
 * vim (+ vundle)
 * awesomewm +4
 
 Note that this files are my personal configuration for my work environment so some things should be modified to satisfy your needs.
 
-Which things? I'll try to explain some of them and add some screenshots (which ill be adding soon).
+Which things? I'll try to explain some of them and add some screenshots.
 
 ## Clone repository
 
@@ -15,15 +17,15 @@ $ mkdir ~/Projects
 $ https://github.com/blkdr/dotfiles.git
 ```
 
-My config takes `~/Projects/dotfiles` as their home folder. If you want to change it you must replace the directory on these files:
-
-```
-Comming soon
-```
-
-And also apply those changes to the command lines used below.
+My config takes `~/Projects/dotfiles` as their home folder. Change this path as required on the command lines used below if you want.
 
 ## How to install
+
+###### Deprecated
+
+> The versions of `awesomewm` and `termite` that I usually use come within Archlinux repos. I'm not using Archlinux for the moment so the instructions for these sections are outdated (and should be avoided).
+
+> Any related section will be marked with a "Deprecated" legend in the title.
 
 My `awesomewm` and `termite` config uses the `lemon` font from the `artwiz` fonts.
 
@@ -62,6 +64,12 @@ Install `zsh` and [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
+```
+""" Ubuntu
+# apt install zsh
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
 Install [antigen](https://getantibody.github.io/install/)
 
 ```
@@ -71,7 +79,7 @@ $ curl -sL git.io/antibody | sh -s
 Install [NVM](https://github.com/creationix/nvm#install-script)
 
 ```
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash
 ```
 Note: the version could be outdated. Please verify the current version in the previous link.
 
@@ -97,7 +105,51 @@ And reload the config
 $ source ~/.zshrc
 ```
 
-### Termite
+### Tmux
+
+Clone `tpm` with:
+
+```
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+Link the config
+
+```
+$ ln -s ~/Projects/dotfiles/.tmux.conf ~/
+```
+
+The tmux prefix is `Ctrl + a`
+
+Start a tmux session and inside verify that the config is functional with `<prefix>` + `r`. A message with `~/.tmux.conf reloaded` should appear on the bottom left.
+
+Now install plugins. Within a tmux session use `prefix` + `I` (capital i, as in Install).
+
+### Gnome-terminal
+
+Install gnome-terminal from repos.
+
+```
+# apt install gnome-terminal
+```
+
+Then download the `base16-gnome-terminal` repo:
+
+```
+$ git clone https://github.com/aaron-williamson/base16-gnome-terminal.git ~/.config/base16-gnome-terminal
+```
+
+Install the desired theme (I'm good with `base16-gruvbox-dark-soft-256`)
+
+```
+$ bash ~/.config/base16-gnome-terminal/color-scripts/base16-gruvbox-dark-soft-256.sh
+```
+
+> For the font I currently use `Victor Mono` as my primary font selection. Download [here](https://rubjo.github.io/victor-mono/).
+
+> Pro tip: `Victor Mono` looks amazing in `gnome-terminal` with this setting: `Victor Mono Bold, 10`
+
+### Termite (deprecated)
 
 ```
 # pacman -S termite
@@ -115,6 +167,10 @@ Install a clipboard capable vim version. In archlinux you need to install `gvim`
 
 ```
 # pacman -S gvim
+```
+
+```
+# apt install gvim
 ```
 
 Install [vundle](https://github.com/VundleVim/Vundle.vim) and link the config
@@ -143,9 +199,11 @@ My vim config bring these shortcuts and features:
 * `d` `D` `x` `X` will delete the selected text. For copy you need to press for example `<leader>d`
 * You can edit the `~/.vimrc` file at anytime inside vim by pressing `<leader>ev`
 * To source the `~/.vimrc` at anytime inside vim use `<leader>sv`
+* `gp` prettify the file (works with `.js` files perfectly :P, also you need to install `prettier` with npm - `npm install prettier --save --global` - )
+* `:FormatJSON` format a valid `.json` file (`python` is required)
 * Other features that you can view/modify through the `~/.vimrc` file
 
-### i3lock
+### i3lock (deprecated)
 
 You need to install the `i3lock` package 
 
@@ -159,7 +217,7 @@ And grant executable permissions to the script on this repository
 $ chmod +x ~/Projects/dotfiles/i3lock/lock
 ```
 
-### Awesomewm config
+### Awesomewm config (deprecated)
 
 ```
 $ ln -s ~/Projects/dotfiles/awesome ~/.config
@@ -170,3 +228,15 @@ Then reload awesomewm with Ctrl + Win + R
 The bar is hidden by default but you can toggle it with `<Win-b>`.
 
 The menu is only accessible with `<Win-w>`
+
+# What should be next
+
+A script that configure all this repo with a single command.
+
+Maybe an `awesomewm` and a `awesomewm` free version should be good.
+
+Meanwhile all these instructions work as an practical guide.
+
+# More useful software
+
+* `flameshot` for nice screenshots.
