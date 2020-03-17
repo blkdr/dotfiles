@@ -25,13 +25,13 @@ My config takes `~/Projects/dotfiles` as their home folder. Change this path as 
 
 > The versions of `awesomewm` and `termite` that I usually use come within Archlinux repos. I'm not using Archlinux for the moment so the instructions for these sections are outdated (and should be avoided).
 
-> Any related section will be marked with a "Deprecated" legend in the title.
+> Any related section will be marked with a "deprecated" legend in the title.
 
 My `awesomewm` and `termite` config uses the `lemon` font from the `artwiz` fonts.
 
-If you want to use another font you need to update the font variable on these files: `termite/config and `awesome/themes/powerarrow-dark/theme.lua`
+If you want to use another font you need to update the font variable on these files: `termite/config` and `awesome/themes/powerarrow-dark/theme.lua`
 
-### Install the artwiz fonts
+### Install the artwiz fonts (deprecated)
 
 For archlinux run
 
