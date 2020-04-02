@@ -91,10 +91,17 @@ $ chsh -s /bin/zsh
 
 You may reboot in order to use zsh or type `zsh` when opening a new terminal until you reboot.
 
+***On a EC2 instance***
+
+- Connect to your EC2 instance
+- Edit your passwd configuration file to tell which shell to use for user ubuntu : `sudo vim /etc/passwd`
+- Look for ubuntu user, and replace `bin/bash` with `bin/zsh`
+- Disconnect from your instance and reconnect it.
+
 Remove the default zsh plugins and themes and link this config
 
 ```
-$ rm -r ~/.oh-my-zsh/custom/themes
+$ rm -r ~/.oh-my-zsh/custom/themes/*
 $ ln -s ~/Projects/dotfiles/.oh-my-zsh-themes/* ~/.oh-my-zsh/custom/themes/
 $ ln -s ~/Projects/dotfiles/{.shell_aliases,.shell_colors,.shell_helpers,.zshrc} ~/
 ```
