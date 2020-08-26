@@ -41,27 +41,31 @@ Plugin 'junegunn/limelight.vim'
 Plugin 'pseewald/vim-anyfold'
 " Automatically highlight current word under the cursor
 Plugin 'RRethy/vim-illuminate'
+" Show colors from hex codes (#FFFFFF)
 Plugin 'ap/vim-css-color'
+
 
 "Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'scrooloose/syntastic'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 "Plugin 'itchyny/lightline.vim'
 
 " Colorschemes
-Plugin 'Remich/vim-material-monokai'
-Plugin 'ayu-theme/ayu-vim'
-Plugin 'romainl/flattened' " based on solarized
-Plugin 'kaicataldo/material.vim'
-Plugin 'rakr/vim-one'
-Plugin 'ajmwagar/vim-deus'
-Plugin 'megantiu/true.vim'
-Plugin 'yasukotelin/shirotelin'
 Plugin 'chriskempson/base16-vim'
+"Plugin 'franbach/miramare'
+"Plugin 'haishanh/night-owl.vim'
+"Plugin 'Remich/vim-material-monokai'
+"Plugin 'kjakapat/eva-theme', {'rtp': 'vim/'}
+"Plugin 'clark-t/jojokai'
+Plugin 'ghifarit53/tokyonight-vim'
+Plugin 'BlakeWilliams/numetal.vim'
 
+"ale
+Plugin 'dense-analysis/ale'
 Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()
@@ -122,73 +126,70 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-"let vim_colorscheme='ayu'
-"let vim_colorscheme='material-monokai'
-"let vim_colorscheme='material'
-"let vim_colorscheme='apprentice'
-"let vim_colorscheme='flat'
-"let vim_colorscheme='one'
-"let vim_colorscheme='deus'
-"let vim_colorscheme='true.vim'
-"let vim_colorscheme='shirotelin'
-let vim_colorscheme='base16'
+"let vim_colorscheme='base16'
+"let vim_colorscheme='jojo'
+"let vim_colorscheme='miramare'
+"let vim_colorscheme='owl'
+"let vim_colorscheme='blkdr'
+"let vim_colorscheme='srcery'
+"let vim_colorscheme='tokyo'
+let vim_colorscheme='numetal'
 
-if vim_colorscheme == 'ayu'
-  set background=dark
-  "let ayucolor="light"
-  let ayucolor="mirage"
-  "let ayucolor="dark"
-
-  colorscheme ayu
-endif
-if vim_colorscheme == 'material-monokai'
-  "let g:materialmonokai_subtle_spell=1
-  let g:airline_theme='materialmonokai'
-
-  set background=dark
-  let g:lightline = {'colorscheme' : 'monokai'}
-  colorscheme material-monokai
-endif
-if vim_colorscheme == 'material'
-  set background=dark
-  "let g:material_terminal_italics = 1
-  let g:material_theme_style = 'palenight' " default, palenight, ocean, lighter, darker
-  let g:lightline = {'colorscheme' : 'material_vim'}
-  colorscheme material
-endif
-if vim_colorscheme == 'apprentice'
-  set background=dark
-  colorscheme apprentice
-endif
-if vim_colorscheme == 'flat'
-  colorscheme flattened_dark
-endif
-if vim_colorscheme == 'one'
-  set background=dark
-  let g:lightline = {'colorscheme' : 'one'}
-  colorscheme one
-endif
-if vim_colorscheme == 'deus'
-  set background=dark
-  let g:lightline = {'colorscheme' : 'deus'}
-  colorscheme deus
-endif
-if vim_colorscheme == 'true.vim'
-  set background=dark
-  let g:true_airline = 1
-  let g:airline_theme='true'
-  colorscheme true
-endif
-if vim_colorscheme == 'shirotelin'
-  set background=light
-  let g:airline_theme='one'
-  colorscheme shirotelin
-endif
 if vim_colorscheme == 'base16'
   set background=dark
-  "colorscheme base16-darktooth
   colorscheme base16-gruvbox-dark-soft
+  "colorscheme base16-outrun-dark
+  "colorscheme base16-heetch
+  "colorscheme base16-solarized-dark
+
+  "colorscheme base16-darktooth
+  "colorscheme base16-atlas
+  "colorscheme base16-tomorrow-night
+  "colorscheme base16-spacemacs
+  "colorscheme base16-horizon-dark
+  "colorscheme base16-solarflare
+  "colorscheme base16-monokai
 endif
+if vim_colorscheme == 'tokyo'
+  set background=dark
+  let g:tokyonight_style = 'night' " available: night, storm
+  let g:tokyonight_enable_italic = 1
+  let g:tokyonight_disable_italic_comment = 0
+  colorscheme tokyonight
+  let g:airline_theme='tokyonight'
+endif
+if vim_colorscheme == 'numetal'
+  set background=dark
+  colorscheme numetal
+  let g:airline_theme='numetal'
+endif
+if vim_colorscheme == 'jojo'
+  set background=dark
+  colorscheme jojokai
+  let g:lightline = { 'colorscheme': 'jojokai' }
+endif
+if vim_colorscheme == 'srcery'
+  set background=dark
+  colorscheme srcery
+endif
+if vim_colorscheme == 'owl'
+  set background=dark
+  let g:lightline = { 'colorscheme': 'nightowl' }
+  colorscheme night-owl
+endif
+if vim_colorscheme == 'blkdr'
+  set background=dark
+  let g:airline_theme='materialmonokai'
+  let g:materialmonokai_italic = 1
+  colorscheme material-monokai
+endif
+if vim_colorscheme == 'miramare'
+  set background=dark
+  let g:airline_theme = 'miramare'
+  let g:miramare_enable_italic = 1
+  colorscheme miramare
+endif
+
 if vim_colorscheme == 'desert'
   set background=light
   colorscheme desert
@@ -272,7 +273,54 @@ imap JK <Esc>
 "set list
 "set listchars=tab:»-,eol:↲,extends:»,precedes:«,space:.
 
+
 " Fold
 autocmd Filetype * AnyFoldActivate
 set foldlevel=99
 set shell=~/.vim-shell-wrapper.sh
+
+" Ale
+let g:ale_completion_enabled = 1
+nmap <silent> <C-e> <Plug>(ale_next_wrap)
+
+function! LinterStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_warnings = l:counts.total - l:all_errors
+
+  let l:errors_recap = l:all_errors == 0 ? '' : printf('%d⨉ ', all_errors)
+  let l:warnings_recap = l:all_warnings == 0 ? '' : printf('%d⚠ ', all_warnings)
+  return (errors_recap . warnings_recap)
+endfunction
+
+set statusline+=%=
+set statusline+=\ %{LinterStatus()}
+
+let g:ale_fixers = {
+      \ 'javascript': ['eslint']
+      \ }
+let g:ale_linters = {
+      \  'javascript': ['eslint']
+      \}
+
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_save = 1
+
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
+let g:ale_echo_msg_error_str = 'ERROR'
+let g:ale_echo_msg_warning_str = 'WARNING'
+let g:ale_echo_msg_format = '«%severity%» %s [%linter%]'
+"set binary
+"set noeol
+"set nofixendofline
+set nofixendofline
+
+" Paste
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
