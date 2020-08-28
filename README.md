@@ -73,7 +73,7 @@ $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/m
 Install [antigen](https://getantibody.github.io/install/)
 
 ```
-$ curl -sL git.io/antibody | sh -s
+$ curl -sfL git.io/antibody | sudo sh -s - -b /usr/local/bin
 ```
 
 Install [NVM](https://github.com/creationix/nvm#install-script)
