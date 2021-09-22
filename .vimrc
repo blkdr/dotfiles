@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Syntax highlight
 Plugin 'sheerun/vim-polyglot'
+Plugin 'styled-components/vim-styled-components'
 
 " NeerdTree
 Plugin 'scrooloose/nerdtree'
