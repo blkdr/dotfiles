@@ -64,6 +64,7 @@ Plugin 'chriskempson/base16-vim'
 "Plugin 'clark-t/jojokai'
 Plugin 'ghifarit53/tokyonight-vim'
 Plugin 'BlakeWilliams/numetal.vim'
+Plugin 'wltr/vim-material-monokai'
 
 "ale
 Plugin 'dense-analysis/ale'
@@ -134,7 +135,8 @@ endif
 "let vim_colorscheme='blkdr'
 "let vim_colorscheme='srcery'
 "let vim_colorscheme='tokyo'
-let vim_colorscheme='numetal'
+"let vim_colorscheme='numetal'
+let vim_colorscheme='material'
 
 if vim_colorscheme == 'base16'
   set background=dark
@@ -182,6 +184,12 @@ if vim_colorscheme == 'blkdr'
   set background=dark
   let g:airline_theme='materialmonokai'
   let g:materialmonokai_italic = 1
+  colorscheme material-monokai
+endif
+if vim_colorscheme == 'material'
+  set background=dark
+  let g:airline_theme='materialmonokai'
+  " let g:materialmonokai_italic = 1
   colorscheme material-monokai
 endif
 if vim_colorscheme == 'miramare'
