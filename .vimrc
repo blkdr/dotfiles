@@ -145,7 +145,8 @@ endif
 "let vim_colorscheme='spaceduck'
 "let vim_colorscheme='material'
 "let vim_colorscheme='ayu'
-let vim_colorscheme='paco'
+"let vim_colorscheme='paco'
+let vim_colorscheme='material'
 
 if vim_colorscheme == 'base16'
   set background=dark
@@ -194,6 +195,12 @@ if vim_colorscheme == 'blkdr'
   set background=dark
   let g:airline_theme='materialmonokai'
   let g:materialmonokai_italic = 1
+  colorscheme material-monokai
+endif
+if vim_colorscheme == 'material'
+  set background=dark
+  let g:airline_theme='materialmonokai'
+  " let g:materialmonokai_italic = 1
   colorscheme material-monokai
 endif
 if vim_colorscheme == 'miramare'
