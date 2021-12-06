@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Syntax highlight
 Plugin 'sheerun/vim-polyglot'
+Plugin 'styled-components/vim-styled-components'
 
 " NeerdTree
 Plugin 'scrooloose/nerdtree'
@@ -57,12 +58,17 @@ Plugin 'vim-airline/vim-airline-themes'
 " Colorschemes
 Plugin 'chriskempson/base16-vim'
 "Plugin 'franbach/miramare'
-"Plugin 'haishanh/night-owl.vim'
-"Plugin 'Remich/vim-material-monokai'
+"Plugin 'haishanh/night-owl.vim' "Plugin 'Remich/vim-material-monokai'
 "Plugin 'kjakapat/eva-theme', {'rtp': 'vim/'}
 "Plugin 'clark-t/jojokai'
 Plugin 'ghifarit53/tokyonight-vim'
 Plugin 'BlakeWilliams/numetal.vim'
+Plugin 'ysdexlic/dwarf.vim'
+Plugin 'joshdick/onedark.vim'
+Plugin 'wltr/vim-material-monokai'
+Plugin 'pineapplegiant/spaceduck', { 'branch': 'main' }
+Plugin 'Luxed/ayu-vim'
+Plugin 'pacokwon/onedarkhc.vim'
 
 "ale
 Plugin 'dense-analysis/ale'
@@ -133,7 +139,13 @@ endif
 "let vim_colorscheme='blkdr'
 "let vim_colorscheme='srcery'
 "let vim_colorscheme='tokyo'
-let vim_colorscheme='numetal'
+"let vim_colorscheme='numetal'
+"let vim_colorscheme='dwarf'
+"let vim_colorscheme='onedark'
+"let vim_colorscheme='spaceduck'
+"let vim_colorscheme='material'
+"let vim_colorscheme='ayu'
+let vim_colorscheme='paco'
 
 if vim_colorscheme == 'base16'
   set background=dark
@@ -149,6 +161,7 @@ if vim_colorscheme == 'base16'
   "colorscheme base16-horizon-dark
   "colorscheme base16-solarflare
   "colorscheme base16-monokai
+  let g:lightline = { 'colorscheme': 'jojokai' }
 endif
 if vim_colorscheme == 'tokyo'
   set background=dark
@@ -189,6 +202,46 @@ if vim_colorscheme == 'miramare'
   let g:miramare_enable_italic = 1
   colorscheme miramare
 endif
+if vim_colorscheme == 'dwarf'
+  set background=dark
+  let dwarfcolor="forge"     " for default theme
+  ""let dwarfcolor="iron"      " for rustic theme
+  "let dwarfcolor="steel"     " for dark theme
+  "let dwarfcolor="obsydian"  " for high contrast theme
+  let g:lightline = { 'colorscheme': 'dwarf' }
+  colorscheme dwarf
+endif
+if vim_colorscheme == 'onedark'
+  let g:onedark_terminal_italics=1
+  set background=dark
+  colorscheme onedark
+  let g:lightline = { 'colorscheme': 'onedark' }
+endif
+if vim_colorscheme == 'spaceduck'
+  set background=dark
+  colorscheme spaceduck
+  let g:lightline = { 'colorscheme': 'spaceduck' }
+endif
+if vim_colorscheme == 'material'
+  set background=dark
+  let g:airline_theme='materialmonokai'
+  " let g:materialmonokai_italic = 1
+  colorscheme material-monokai
+endif
+if vim_colorscheme == 'ayu'
+  set background=dark
+  "let g:airline_theme = 'miramare'
+  let g:airline_theme='materialmonokai'
+  let g:ayucolor = "dark"
+  let g:ayu_italic_comment = 1 " Defaults to 0
+  let g:ayu_sign_contrast = 1 " Defaults to 0
+  colorscheme ayu
+endif
+if vim_colorscheme == 'paco'
+  set background=dark
+  let g:airline_theme='night_owl'
+  colorscheme onedarkhc
+endif
 
 if vim_colorscheme == 'desert'
   set background=light
@@ -202,7 +255,7 @@ endif
 let g:jsdoc_enable_es6 = 1
 let g:jsx_ext_required = 0
 
-imap cll console.log();<Esc>hi
+imap cll console.debug();<Esc>hi
 nmap cll yiwocll<Esc>p
 vmap '' c''<Esc>P
 vmap "" c""<Esc>P
